@@ -1,34 +1,23 @@
 /**
- * Configuración de variables de entorno
+ * ⚠️  IMPORTANTE: Este archivo será reemplazado durante el build en Vercel
  *
- * DESARROLLO LOCAL:
- * - Usa los valores de environment.development.ts
- *
- * PRODUCCIÓN (Vercel):
- * - Comentar las líneas 10-15
- * - Descomentar las líneas 18-24
- * - Commit y push
- *
- * Es manual pero SEGURO y SIMPLE
+ * El script build-vercel.js inyectará las variables de entorno aquí.
+ * Este es solo un placeholder para desarrollo.
  */
 
-// PRODUCCIÓN: Configuración para Vercel
 export const environment = {
   production: true,
-  githubToken: '',
+  githubToken: '', // Será inyectado por build-vercel.js
   githubUsername: 'Yohani95',
   baseUrl: 'https://portafolio-yohani.vercel.app',
   gaTrackingId: '',
 };
 
-/**
- * Validar configuración crítica
- */
 export function validateEnvironment(): { valid: boolean; errors: string[] } {
   const errors: string[] = [];
 
   if (!environment.githubToken) {
-    errors.push('⚠️  GITHUB_TOKEN no configurado. ' + 'Rate limit básico (60 req/hora) aplicado.');
+    errors.push('⚠️  GITHUB_TOKEN no configurado. Rate limit básico (60 req/hora) aplicado.');
   }
 
   return {
@@ -37,9 +26,6 @@ export function validateEnvironment(): { valid: boolean; errors: string[] } {
   };
 }
 
-/**
- * Imprimir advertencias de configuración
- */
 export function logEnvironmentWarnings(): void {
   if (typeof window === 'undefined') return;
 

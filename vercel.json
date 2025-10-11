@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "portafolio-yohani-espinoza",
-  "buildCommand": "npx nx build portfolio-web --configuration=production",
+  "buildCommand": "node build-vercel.js",
   "outputDirectory": "dist/apps/portfolio-web/browser",
   "rewrites": [
     {
