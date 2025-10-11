@@ -12,20 +12,14 @@
  * Es manual pero SEGURO y SIMPLE
  */
 
-// DESARROLLO: Descomentar esto para desarrollo local
-import { environment as devEnvironment } from './environment.development';
-export const environment = devEnvironment;
-
-// PRODUCCIÓN: Descomentar esto para deploy en Vercel (y comentar líneas 13-14)
-/*
+// PRODUCCIÓN: Configuración para Vercel
 export const environment = {
   production: true,
   githubToken: '',
   githubUsername: 'Yohani95',
-  baseUrl: 'https://portfolio-yohani-espinoza.vercel.app',
+  baseUrl: 'https://portafolio-yohani.vercel.app',
   gaTrackingId: '',
 };
-*/
 
 /**
  * Validar configuración crítica
