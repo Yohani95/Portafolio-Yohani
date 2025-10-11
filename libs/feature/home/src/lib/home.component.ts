@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   readonly name = 'Yohani Espinoza Duarte';
   readonly roles = ['Ingeniero en Informática', 'Full Stack Developer'];
   readonly tagline =
-    'Más de 4 años desarrollando soluciones escalables con diferentes tecnologías como .NET Core, Spring Boot y Next.js. Conectando tecnología con el mar.';
+    'Más de 4 años desarrollando soluciones escalables con diferentes tecnologías como .NET Core, Spring Boot, Next.js, Angular y más. Conectando tecnología con el mar.';
 
   currentRoleIndex = 0;
   private intervalId?: number;
