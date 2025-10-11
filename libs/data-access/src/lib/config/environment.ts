@@ -7,9 +7,9 @@
 
 export const environment = {
   production: true,
-  githubToken: '', // Será inyectado por build-vercel.js
-  githubUsername: 'Yohani95',
-  baseUrl: 'https://portafolio-yohani.vercel.app',
+  githubToken: '',
+  githubUsername: '',
+  baseUrl: '',
   gaTrackingId: '',
 };
 

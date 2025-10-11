@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky",
-    "dev": "nx serve-static portfolio-web",
+    "dev": "nx serve portfolio-web",
     "build": "nx build portfolio-web --configuration=production",
     "serve-static": "nx serve-static portfolio-web",
     "format": "prettier --write .",
