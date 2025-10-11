@@ -5,10 +5,9 @@ import {
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
-import {
-  provideClientHydration,
-  withEventReplay,
-} from '@angular/platform-browser';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideMarkdown } from 'ngx-markdown';
+import { provideApollo } from '@portfolio-nx/data-access';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,5 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
+    provideApollo,
+    provideMarkdown(),
   ],
 };

@@ -1,0 +1,63 @@
+// Estilos para el contenido markdown
+::ng-deep {
+  .prose {
+    color: inherit;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: inherit;
+      font-weight: bold;
+    }
+
+    a {
+      color: #0c90eb;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    code {
+      background-color: #f1f5f9;
+      padding: 0.2em 0.4em;
+      border-radius: 0.25rem;
+      font-size: 0.875em;
+    }
+
+    pre {
+      background-color: #1e293b;
+      color: #f1f5f9;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+
+      code {
+        background-color: transparent;
+        padding: 0;
+      }
+    }
+
+    blockquote {
+      border-left: 4px solid #0c90eb;
+      padding-left: 1rem;
+      font-style: italic;
+      color: #64748b;
+    }
+  }
+
+  .dark .prose {
+    code {
+      background-color: #1e293b;
+      color: #e2e8f0;
+    }
+
+    a {
+      color: #36aefa;
+    }
+  }
+}

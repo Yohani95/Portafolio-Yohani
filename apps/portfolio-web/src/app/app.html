@@ -1,2 +1,7 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<div class="min-h-screen flex flex-col bg-white dark:bg-deep-900 transition-colors duration-200">
+  <app-header></app-header>
+  <main class="flex-grow pt-16">
+    <router-outlet></router-outlet>
+  </main>
+  <app-footer></app-footer>
+</div>

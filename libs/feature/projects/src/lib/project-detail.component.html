@@ -1,0 +1,178 @@
+<!-- Loading State -->
+<div
+  *ngIf="loading()"
+  class="min-h-screen flex items-center justify-center bg-white dark:bg-deep-900"
+>
+  <div class="text-center">
+    <div
+      class="w-16 h-16 border-4 border-marine-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"
+    ></div>
+    <p class="text-deep-600 dark:text-deep-300">Cargando proyecto...</p>
+  </div>
+</div>
+
+<!-- Error State -->
+<div
+  *ngIf="error() && !loading()"
+  class="min-h-screen flex items-center justify-center bg-white dark:bg-deep-900"
+>
+  <div class="text-center max-w-md">
+    <svg
+      class="w-24 h-24 mx-auto text-red-500 mb-4"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
+    </svg>
+    <h2 class="text-2xl font-bold text-deep-900 dark:text-white mb-4">Error al Cargar</h2>
+    <p class="text-deep-600 dark:text-deep-300 mb-6">{{ error() }}</p>
+    <a
+      routerLink="/projects"
+      class="px-6 py-2 bg-marine-600 text-white rounded-lg hover:bg-marine-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-marine-500 shadow-lg hover:shadow-xl inline-flex items-center justify-center font-medium"
+    >
+      Volver a Proyectos
+    </a>
+  </div>
+</div>
+
+<!-- Project Content -->
+<div
+  *ngIf="project() && !loading()"
+  class="bg-white dark:bg-deep-900 transition-colors duration-200"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-marine text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl">
+        <!-- Breadcrumb -->
+        <nav class="mb-6 text-sm text-ocean-200">
+          <a routerLink="/" class="hover:text-white">Inicio</a>
+          <span class="mx-2">/</span>
+          <a routerLink="/projects" class="hover:text-white">Proyectos</a>
+          <span class="mx-2">/</span>
+          <span class="text-white">{{ project()?.name }}</span>
+        </nav>
+
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ project()?.name }}</h1>
+        <p class="text-lg text-ocean-100 mb-6" *ngIf="project()?.description">
+          {{ project()?.description }}
+        </p>
+
+        <!-- Metadata -->
+        <div class="flex flex-wrap gap-4 items-center">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-ocean-300" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              />
+            </svg>
+            <span>{{ project()?.stargazerCount }} stars</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-ocean-300" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span>{{ project()?.forkCount }} forks</span>
+          </div>
+          <div class="flex items-center gap-2" *ngIf="project()?.primaryLanguage">
+            <span
+              class="w-3 h-3 rounded-full"
+              [style.background-color]="project()?.primaryLanguage?.color"
+            ></span>
+            <span>{{ project()?.primaryLanguage?.name }}</span>
+          </div>
+          <div *ngIf="project()?.licenseInfo" class="flex items-center gap-2">
+            <svg
+              class="w-5 h-5 text-ocean-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            <span>{{ project()?.licenseInfo?.spdxId }}</span>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex flex-wrap gap-4 mt-6">
+          <a
+            [href]="project()?.url || ''"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-6 py-3 bg-ocean-600 text-white rounded-lg hover:bg-ocean-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ocean-500 shadow-lg hover:shadow-xl inline-flex items-center justify-center font-medium text-lg"
+          >
+            Ver en GitHub
+          </a>
+          <a
+            *ngIf="project()?.homepageUrl"
+            [href]="project()?.homepageUrl || ''"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-6 py-3 bg-white dark:bg-deep-800 text-ocean-600 dark:text-ocean-400 border-2 border-ocean-600 dark:border-ocean-400 rounded-lg hover:bg-ocean-50 dark:hover:bg-deep-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ocean-500 inline-flex items-center justify-center font-medium text-lg"
+          >
+            🌐 Ver Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section class="bg-deep-50 dark:bg-deep-800 py-6 transition-colors duration-200">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl flex flex-wrap gap-2">
+        <span
+          *ngFor="let topic of project()?.topics"
+          class="px-3 py-1 bg-marine-600 text-white text-sm rounded-full font-medium"
+        >
+          {{ topic }}
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- README Content -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <app-card padding="lg">
+          <div *ngIf="project()?.readme" class="prose prose-lg dark:prose-invert max-w-none">
+            <markdown [data]="project()?.readme"></markdown>
+          </div>
+          <div
+            *ngIf="!project()?.readme"
+            class="text-center py-12 text-deep-600 dark:text-deep-400"
+          >
+            <p>Este proyecto no tiene un archivo README.md</p>
+          </div>
+        </app-card>
+
+        <!-- Back Button -->
+        <div class="mt-8 text-center">
+          <a
+            routerLink="/projects"
+            class="px-6 py-3 bg-white dark:bg-deep-800 text-ocean-600 dark:text-ocean-400 border-2 border-ocean-600 dark:border-ocean-400 rounded-lg hover:bg-ocean-50 dark:hover:bg-deep-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ocean-500 inline-flex items-center justify-center font-medium text-lg"
+          >
+            ← Volver a Proyectos
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

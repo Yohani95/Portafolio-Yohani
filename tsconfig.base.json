@@ -14,7 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@portfolio-nx/data-access": ["libs/data-access/src/index.ts"],
+      "@portfolio-nx/feature/about": ["libs/feature/about/src/index.ts"],
+      "@portfolio-nx/feature/contact": ["libs/feature/contact/src/index.ts"],
+      "@portfolio-nx/feature/home": ["libs/feature/home/src/index.ts"],
+      "@portfolio-nx/feature/projects": ["libs/feature/projects/src/index.ts"],
+      "@portfolio-nx/ui": ["libs/ui/src/index.ts"],
+      "@portfolio-nx/utils": ["libs/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

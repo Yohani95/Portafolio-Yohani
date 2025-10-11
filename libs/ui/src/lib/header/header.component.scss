@@ -1,0 +1,27 @@
+header {
+  transition: all 0.3s ease-in-out;
+
+  nav {
+    max-width: 1280px;
+  }
+
+  a {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #0c90eb, #0159a3);
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after,
+    &.active::after {
+      width: 100%;
+    }
+  }
+}

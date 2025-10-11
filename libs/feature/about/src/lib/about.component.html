@@ -1,0 +1,212 @@
+<!-- Hero Section -->
+<section class="bg-gradient-marine text-white py-20">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Acerca de Mí</h1>
+      <p class="text-lg text-ocean-100">Desarrollador, creador y aprendiz constante</p>
+    </div>
+  </div>
+</section>
+
+<!-- Bio Section -->
+<section class="py-16 bg-white dark:bg-deep-900 transition-colors duration-200">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Profile Image Placeholder -->
+        <div class="md:col-span-1">
+          <div
+            class="w-full aspect-square bg-gradient-ocean rounded-lg shadow-marine flex items-center justify-center"
+          >
+            <span class="text-white text-6xl font-bold">👨‍💻</span>
+          </div>
+        </div>
+
+        <!-- Bio Text -->
+        <div class="md:col-span-2 space-y-4">
+          <p class="text-deep-700 dark:text-deep-200 leading-relaxed text-lg">
+            {{ bio.introduction }}
+          </p>
+          <p class="text-deep-700 dark:text-deep-200 leading-relaxed">{{ bio.experience }}</p>
+          <p class="text-deep-700 dark:text-deep-200 leading-relaxed">{{ bio.focus }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-16 bg-deep-50 dark:bg-deep-800 transition-colors duration-200">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-deep-900 dark:text-white mb-12 text-center">
+        Habilidades Técnicas
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div
+          *ngFor="let skillGroup of skills"
+          class="bg-white dark:bg-deep-900 rounded-lg shadow-md p-6 border border-deep-200 dark:border-deep-700"
+        >
+          <h3 class="text-xl font-bold text-marine-700 dark:text-marine-400 mb-4 flex items-center">
+            <span
+              class="w-2 h-2 bg-marine-600 dark:bg-marine-400 rounded-full mr-3 animate-pulse"
+            ></span>
+            {{ skillGroup.category }}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span
+              *ngFor="let skill of skillGroup.items"
+              class="px-3 py-2 bg-marine-50 dark:bg-marine-900 text-marine-700 dark:text-marine-300 text-sm rounded-lg font-medium hover:bg-marine-100 dark:hover:bg-marine-800 transition-colors"
+            >
+              {{ skill }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education & Certifications -->
+<section class="py-16 bg-white dark:bg-deep-900 transition-colors duration-200">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Education -->
+        <div>
+          <h2 class="text-2xl font-bold text-deep-900 dark:text-white mb-6">Educación</h2>
+          <div
+            *ngFor="let edu of education"
+            class="mb-4 p-4 border-l-4 border-marine-600 dark:border-marine-400 bg-deep-50 dark:bg-deep-800"
+          >
+            <h3 class="font-bold text-deep-800 dark:text-deep-200">{{ edu.degree }}</h3>
+            <p class="text-deep-600 dark:text-deep-300">{{ edu.institution }}</p>
+            <p class="text-deep-500 dark:text-deep-400 text-sm">{{ edu.year }}</p>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div>
+          <h2 class="text-2xl font-bold text-deep-900 dark:text-white mb-6">Certificaciones</h2>
+          <ul class="space-y-3">
+            <li
+              *ngFor="let cert of certifications"
+              class="flex items-start p-4 bg-deep-50 dark:bg-deep-800 rounded-lg"
+            >
+              <svg
+                class="w-6 h-6 text-ocean-600 mr-3 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="text-deep-700 dark:text-deep-200">{{ cert }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Maritime Passion Section - Sección Especial -->
+<section class="py-16 bg-gradient-ocean text-white relative overflow-hidden">
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">{{ maritimePassion.title }}</h2>
+      <div class="space-y-4 text-lg text-ocean-50 leading-relaxed">
+        <p>{{ maritimePassion.description }}</p>
+        <p>{{ maritimePassion.vision }}</p>
+        <p class="font-semibold text-white">{{ maritimePassion.belief }}</p>
+      </div>
+      <div class="mt-8 flex flex-wrap justify-center gap-8 text-sm">
+        <div class="flex items-center gap-2">
+          <span class="text-4xl">⚓</span>
+          <span>Patrón de Nave</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-4xl">🎣</span>
+          <span>Pescador Artesanal</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-4xl">🌊</span>
+          <span>Amante del Océano</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Timeline -->
+<section class="py-16 bg-white dark:bg-deep-900 transition-colors duration-200">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-deep-900 dark:text-white mb-12 text-center">
+        Experiencia Profesional
+      </h2>
+
+      <div class="space-y-8">
+        <!-- KPAZ -->
+        <div class="border-l-4 border-marine-600 dark:border-marine-400 pl-6 py-4">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+            <h3 class="text-xl font-bold text-deep-900 dark:text-white">
+              Desarrollador Full Stack
+            </h3>
+            <span class="text-sm text-deep-600 dark:text-deep-400">07/2023 - 07/2025</span>
+          </div>
+          <p class="text-marine-600 dark:text-marine-400 font-semibold mb-3">KPAZ</p>
+          <p class="text-deep-700 dark:text-deep-200 mb-3">
+            Lideré un proyecto interno para mejorar la eficiencia en la gestión corporativa,
+            automatizando el flujo completo desde la captación del cliente hasta su facturación.
+          </p>
+          <ul class="list-disc list-inside text-deep-600 dark:text-deep-300 space-y-1 text-sm">
+            <li>Liderazgo técnico y diseño con Clean Architecture</li>
+            <li>Desarrollo backend en .NET Core 6 y frontend en Next.js</li>
+            <li>Despliegue continuo en Azure usando Docker y GitHub Actions</li>
+          </ul>
+        </div>
+
+        <!-- Allware -->
+        <div class="border-l-4 border-ocean-600 dark:border-ocean-400 pl-6 py-4">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+            <h3 class="text-xl font-bold text-deep-900 dark:text-white">
+              Desarrollador Full Stack
+            </h3>
+            <span class="text-sm text-deep-600 dark:text-deep-400">08/2022 - 07/2023</span>
+          </div>
+          <p class="text-ocean-600 dark:text-ocean-400 font-semibold mb-3">Allware</p>
+          <p class="text-deep-700 dark:text-deep-200 mb-3">
+            Desarrollé microservicios para Entel y proyectos empresariales de diferentes rubros.
+          </p>
+          <ul class="list-disc list-inside text-deep-600 dark:text-deep-300 space-y-1 text-sm">
+            <li>APIs REST y microservicios en Java Spring Boot para Entel</li>
+            <li>Proyecto de acuicultura con React y Laravel</li>
+            <li>Integración de APIs y soporte a producción</li>
+          </ul>
+        </div>
+
+        <!-- APR Software -->
+        <div class="border-l-4 border-deep-600 dark:border-deep-400 pl-6 py-4">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+            <h3 class="text-xl font-bold text-deep-900 dark:text-white">Desarrollador .NET</h3>
+            <span class="text-sm text-deep-600 dark:text-deep-400">07/2021 - 07/2022</span>
+          </div>
+          <p class="text-deep-600 dark:text-deep-400 font-semibold mb-3">APR Software</p>
+          <p class="text-deep-700 dark:text-deep-200 mb-3">
+            Desarrollo de sistema ERP para comités de APR con facturación masiva automatizada.
+          </p>
+          <ul class="list-disc list-inside text-deep-600 dark:text-deep-300 space-y-1 text-sm">
+            <li>Nuevas funcionalidades en VB.NET y C#</li>
+            <li>Migración de escritorio a plataforma web</li>
+            <li>Optimización de procedimientos almacenados en SQL Server</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

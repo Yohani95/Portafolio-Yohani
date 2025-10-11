@@ -1,0 +1,67 @@
+<footer class="bg-deep-900 dark:bg-black text-white py-12 mt-auto transition-colors duration-200">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Columna 1: Info -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 bg-gradient-marine bg-clip-text text-transparent">
+          Yohani Espinoza
+        </h3>
+        <p class="text-deep-300 text-sm leading-relaxed">
+          Ingeniero en Informática con +4 años de experiencia. Desarrollador Full Stack
+          especializado en .NET Core, Spring Boot y Next.js. Patrón de nave menor y pescador
+          artesanal, conectando tecnología con el mar.
+        </p>
+      </div>
+
+      <!-- Columna 2: Links Rápidos -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+        <ul class="space-y-2 text-deep-300">
+          <li>
+            <a href="/" class="hover:text-marine-400 transition-colors duration-200">Inicio</a>
+          </li>
+          <li>
+            <a href="/projects" class="hover:text-marine-400 transition-colors duration-200"
+              >Proyectos</a
+            >
+          </li>
+          <li>
+            <a href="/about" class="hover:text-marine-400 transition-colors duration-200"
+              >Acerca de</a
+            >
+          </li>
+          <li>
+            <a href="/contact" class="hover:text-marine-400 transition-colors duration-200"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Redes Sociales -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Conéctate</h4>
+        <div class="flex space-x-4">
+          <a
+            *ngFor="let social of socialLinks"
+            [href]="social.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="social.name"
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-deep-800 hover:bg-marine-600 transition-all duration-200 hover:shadow-marine"
+          >
+            <span class="sr-only">{{ social.name }}</span>
+            <!-- Icon placeholder - will be replaced with actual icons later -->
+            <span class="text-sm font-bold">{{ social.icon[0].toUpperCase() }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-8 pt-8 border-t border-deep-800 text-center text-deep-400 text-sm">
+      <p>&copy; {{ currentYear }} Yohani Espinoza Duarte. Todos los derechos reservados.</p>
+      <p class="mt-2">Construido con Angular 20 + Nx + Tailwind CSS | Santiago, Chile 🇨🇱</p>
+    </div>
+  </div>
+</footer>

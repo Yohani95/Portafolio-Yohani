@@ -1,6 +1,35 @@
-# Add files here to ignore them from prettier formatting
-/dist
-/coverage
-/.nx/cache
-/.nx/workspace-data
+# Build outputs
+dist/
+build/
+.angular/
+coverage/
+
+# Dependencies
+node_modules/
+
+# Nx
+.nx/
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Generated files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
 .angular

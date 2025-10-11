@@ -1,0 +1,14 @@
+:host {
+  display: inline-block;
+}
+
+button,
+a {
+  white-space: nowrap;
+  user-select: none;
+  text-decoration: none;
+
+  &:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+}

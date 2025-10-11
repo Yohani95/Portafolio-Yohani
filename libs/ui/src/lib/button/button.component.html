@@ -1,0 +1,18 @@
+<a *ngIf="routerLink && !disabled" [routerLink]="routerLink" [class]="classes" role="button">
+  <ng-content></ng-content>
+</a>
+
+<a
+  *ngIf="href && !disabled"
+  [href]="href"
+  [class]="classes"
+  target="_blank"
+  rel="noopener noreferrer"
+  role="button"
+>
+  <ng-content></ng-content>
+</a>
+
+<button *ngIf="!routerLink && !href" [type]="type" [disabled]="disabled" [class]="classes">
+  <ng-content></ng-content>
+</button>

@@ -1,0 +1,28 @@
+# robots.txt para Portfolio de Yohani Espinoza
+
+# Permitir acceso a todos los bots de búsqueda
+User-agent: *
+Allow: /
+
+# Referencia al sitemap
+Sitemap: https://tu-dominio.vercel.app/sitemap.xml
+
+# IMPORTANTE: Actualiza "https://tu-dominio.vercel.app" con tu URL real de Vercel
+
+# Bloquear archivos sensibles (opcional)
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.map$
+
+# Configuración específica para Google
+User-agent: Googlebot
+Allow: /
+
+# Configuración específica para Bing
+User-agent: Bingbot
+Allow: /
+
+# Configuración específica para LinkedIn (para compartir en redes)
+User-agent: LinkedInBot
+Allow: /
+
