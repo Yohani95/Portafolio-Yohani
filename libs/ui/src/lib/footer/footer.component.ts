@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
+  version = '1.1.0';
 
   socialLinks = [
     {
