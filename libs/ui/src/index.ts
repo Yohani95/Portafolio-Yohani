@@ -5,3 +5,4 @@ export * from './lib/button/button.component';
 export * from './lib/card/card.component';
 export * from './lib/skeleton-card/skeleton-card.component';
 export * from './lib/error-state/error-state.component';
+export * from './lib/optimized-image/optimized-image.component';

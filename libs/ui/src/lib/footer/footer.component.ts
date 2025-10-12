@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AnalyticsService } from '@portfolio-nx/data-access';
 
 @Component({
   selector: 'lib-footer',
@@ -10,7 +11,8 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
-  version = '1.1.1';
+  version = '1.2.0';
+  private analyticsService = inject(AnalyticsService);
 
   socialLinks = [
     {
@@ -32,4 +34,8 @@ export class FooterComponent {
       ariaLabel: 'Enviarme un correo electrónico',
     },
   ];
+
+  onCVDownload(): void {
+    this.analyticsService.trackCVDownload('footer');
+  }
 }

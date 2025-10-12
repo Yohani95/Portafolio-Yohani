@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SEOService } from '@portfolio-nx/data-access';
+import { SEOService, AnalyticsService } from '@portfolio-nx/data-access';
 
 interface Skill {
   category: string;
@@ -16,6 +16,7 @@ interface Skill {
 })
 export class AboutComponent implements OnInit {
   private seoService = inject(SEOService);
+  private analyticsService = inject(AnalyticsService);
 
   ngOnInit(): void {
     // SEO para la página Acerca de
@@ -85,12 +86,7 @@ export class AboutComponent implements OnInit {
     },
   ];
 
-  certifications = [
-    'Patrón de Nave Menor',
-    'Pescador Artesanal',
-    'Metodologías Ágiles - Scrum',
-    'Clean Architecture & SOLID Principles',
-  ];
+  certifications = [];
 
   maritimePassion = {
     title: '⚓ Una Conexión Única: Tecnología y Mar',
@@ -101,4 +97,8 @@ export class AboutComponent implements OnInit {
     belief:
       'Creo firmemente que la innovación puede transformar la forma en que vivimos y entendemos la pesca artesanal.',
   };
+
+  onCVDownload(): void {
+    this.analyticsService.trackCVDownload('about');
+  }
 }

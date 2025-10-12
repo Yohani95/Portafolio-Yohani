@@ -3,6 +3,7 @@ export * from './lib/services/theme.service';
 export * from './lib/services/github.service';
 export * from './lib/services/cache.service';
 export * from './lib/services/seo.service';
+export * from './lib/services/analytics.service';
 export * from './lib/models/repository.model';
 export * from './lib/graphql/github.graphql';
 export * from './lib/providers/apollo.provider';
