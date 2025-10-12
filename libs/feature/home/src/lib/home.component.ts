@@ -2,11 +2,12 @@ import { Component, Inject, PLATFORM_ID, OnDestroy, OnInit, signal, inject } fro
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { GitHubService, Repository, SEOService } from '@portfolio-nx/data-access';
+import { SkeletonCardComponent, ErrorStateComponent } from '@portfolio-nx/ui';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, SkeletonCardComponent, ErrorStateComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   // Proyectos destacados desde GitHub
   featuredProjects = signal<Repository[]>([]);
   loadingProjects = signal(true);
+  errorProjects = signal(false);
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
@@ -53,17 +55,19 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.loadFeaturedProjects();
   }
 
-  private loadFeaturedProjects(): void {
+  loadFeaturedProjects(): void {
+    this.loadingProjects.set(true);
+    this.errorProjects.set(false);
     this.githubService.getFeaturedRepositories().subscribe({
       next: (repos) => {
         this.featuredProjects.set(repos.slice(0, 3)); // Top 3
         this.loadingProjects.set(false);
+        this.errorProjects.set(false);
       },
       error: (err) => {
         console.error('Error loading featured projects:', err);
         this.loadingProjects.set(false);
-        // Usar datos de respaldo si hay error
-        this.featuredProjects.set([]);
+        this.errorProjects.set(true);
       },
     });
   }

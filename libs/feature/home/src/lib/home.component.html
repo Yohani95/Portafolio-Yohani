@@ -76,17 +76,30 @@
       </p>
     </div>
 
-    <!-- Loading Projects -->
-    <div *ngIf="loadingProjects()" class="text-center py-12">
+    <!-- Loading Projects - Skeleton Loaders -->
+    <div
+      *ngIf="loadingProjects()"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+    >
       <div
-        class="w-12 h-12 border-4 border-marine-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"
-      ></div>
-      <p class="text-deep-600 dark:text-deep-300">Cargando proyectos desde GitHub...</p>
+        *ngFor="let i of [1, 2, 3]"
+        class="bg-white dark:bg-deep-900 rounded-lg shadow-md border border-deep-200 dark:border-deep-700 overflow-hidden"
+      >
+        <app-skeleton-card></app-skeleton-card>
+      </div>
     </div>
+
+    <!-- Error State -->
+    <app-error-state
+      *ngIf="!loadingProjects() && errorProjects()"
+      title="No pudimos cargar los proyectos"
+      message="Hubo un problema al conectar con GitHub. Por favor, verifica tu conexión e intenta nuevamente."
+      (retry)="loadFeaturedProjects()"
+    ></app-error-state>
 
     <!-- Projects Grid -->
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 stagger-animation"
       *ngIf="!loadingProjects() && featuredProjects().length > 0"
     >
       <div
