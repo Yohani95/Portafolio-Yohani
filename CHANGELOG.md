@@ -5,6 +5,76 @@ Todos los cambios notables en este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+## [1.2.0] - 2025-10-12
+
+### ✨ Agregado
+
+**Características Nuevas**
+
+- ✅ **CV Descargable**: Botón prominente en About page y enlace en Footer
+- ✅ **Sistema de Analytics**: Tracking de descargas CV, page views, interacciones
+- ✅ **Componente OptimizedImage**: Lazy loading, WebP support, skeleton loader
+- ✅ **Almacenamiento de Analytics**: LocalStorage con límite de 100 eventos
+- ✅ **Build Script para Vercel**: Inyección automática de variables de entorno
+
+**Mejoras Técnicas**
+
+- ✅ Versión actualizada a 1.2.0
+- ✅ Linting mejorado (sin errores de TypeScript)
+- ✅ Sistema de analytics extensible (ready para Google Analytics)
+
+**Componentes Nuevos**
+
+- `OptimizedImageComponent`: Lazy loading + WebP + error handling
+- `AnalyticsService`: Tracking completo con localStorage
+
+---
+
+## [1.1.1] - 2025-10-12
+
+### 🔧 Mejoras
+
+**Infraestructura**
+
+- ✅ Sistema de variables de entorno mejorado
+- ✅ Archivo `environment.example.ts` para desarrollo
+- ✅ Script `build-vercel.js` para deployment
+- ✅ Configuración dinámica de `GITHUB_TOKEN`, `GITHUB_USERNAME`, `BASE_URL`
+
+**CI/CD**
+
+- ✅ GitHub Actions actualizado (v4 de artifacts y codecov)
+- ✅ Tests y linting integrados en Vercel build
+- ✅ Estrategia de branches: `main` (producción) y `development` (desarrollo)
+
+---
+
+## [1.1.0] - 2025-10-12
+
+### ✨ Agregado
+
+**UX Improvements**
+
+- ✅ **Iconos SVG en Footer**: GitHub, LinkedIn, Email con animaciones
+- ✅ **Skeleton Loaders**: Componente reutilizable con animación pulse
+- ✅ **Animaciones Mejoradas**: Fade-in, slide-up, stagger effect
+- ✅ **Error Boundary**: Componente ErrorState con botón reintentar
+- ✅ **Versioning**: Número de versión visible en footer
+
+**Componentes Nuevos**
+
+- `SkeletonCardComponent`: Placeholder durante carga de repos
+- `ErrorStateComponent`: Manejo elegante de errores
+
+**Features**
+
+- Animación stagger en project cards (efecto cascada)
+- Smooth scroll global
+- Hover effects mejorados en cards y botones
+- Dark mode en skeleton loaders
+
+---
+
 ## [1.0.0] - 2025-10-11
 
 ### 🎉 Lanzamiento Inicial

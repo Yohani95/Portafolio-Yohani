@@ -6,18 +6,21 @@ Este documento detalla las mejoras planeadas para el portafolio, organizadas por
 
 ---
 
-## 🎯 **Versión Actual: v1.0.0** ✅
+## 🎯 **Versión Actual: v1.2.0** ✅
 
 **Estado**: Production Ready  
-**Fecha**: 2025-10-11  
+**Fecha**: 2025-10-12  
 **Características**:
 
 - ✅ Portafolio completo funcional
+- ✅ CV descargable con analytics
+- ✅ Optimización de imágenes (lazy loading, WebP)
 - ✅ 64 tests (90% coverage)
 - ✅ SEO optimizado
 - ✅ SSR/Prerender
 - ✅ Dark mode
 - ✅ GitHub GraphQL integration
+- ✅ Sistema de analytics básico
 
 ---
 
@@ -71,16 +74,46 @@ Este documento detalla las mejoras planeadas para el portafolio, organizadas por
 - ✅ Roadmap actualizado
 - **Impacto**: Seguimiento profesional de releases
 
-### **Pendientes para v1.2.0**
+---
 
-#### **1. Optimización de Imágenes** (Alta prioridad)
+## ✅ **v1.2.0 - CV Descargable y Optimizaciones** (COMPLETADO - 2025-10-12)
 
-- [ ] Lazy loading de imágenes con `loading="lazy"`
-- [ ] Placeholder blur para mejor UX
-- [ ] Formato WebP con fallback a PNG/JPG
-- [ ] Responsive images con `srcset`
+**Estado**: ✅ Desplegado en producción  
+**Fecha de inicio**: 2025-10-12  
+**Fecha de finalización**: 2025-10-12  
+**Tiempo total**: ~4 horas
+
+### **Características Implementadas** ✅
+
+#### **1. CV Descargable** ✅
+
+- ✅ Botón prominente con gradiente marino en About page
+- ✅ Enlace en Footer con ícono de descarga
+- ✅ PDF ubicado correctamente en `/public`
+- ✅ Tracking de descargas con analytics
+- **Impacto**: Reclutadores pueden descargar CV fácilmente
+
+#### **2. Sistema de Analytics** ✅
+
+- ✅ `AnalyticsService` completo con TypeScript strict
+- ✅ Tracking de descargas CV (por fuente: about/footer)
+- ✅ Tracking de page views
+- ✅ Tracking de interacciones de proyectos
+- ✅ Almacenamiento en localStorage (últimos 100 eventos)
+- ✅ Ready para Google Analytics/Mixpanel
+- **Impacto**: Métricas de uso, insights de usuarios
+
+#### **3. Optimización de Imágenes** ✅
+
+- ✅ Componente `OptimizedImageComponent`
+- ✅ Lazy loading automático
+- ✅ Formato WebP con fallback automático
+- ✅ Skeleton loader durante carga
+- ✅ Manejo de errores visual
 - **Beneficio**: Mejor LCP (Largest Contentful Paint)
-- **Esfuerzo**: Bajo (2-3 horas)
+- **Esfuerzo**: 2-3 horas
+
+### **Pendientes para v1.3.0**
 
 ### **Prioridad Media** 🟡
 
@@ -476,6 +509,80 @@ Podemos empezar con cualquiera de estas mejoras. ¿Cuál te gustaría hacer prim
 
 ---
 
-**Fecha**: 2025-10-11  
-**Versión**: 1.0  
-**Próxima revisión**: Cada 2 semanas
+## 🚀 **PRÓXIMOS PASOS INMEDIATOS (v1.3.0)**
+
+### **🔴 URGENTE - Para Reclutadores** (Esta Semana)
+
+#### **1. Formulario de Contacto Funcional** ⭐⭐⭐
+
+- **Problema**: Formulario actual no envía emails
+- **Solución**: Integrar con Formspree/EmailJS (sin backend)
+- **Prioridad**: 🔴 Crítica
+- **Esfuerzo**: 1-2 horas
+- **Beneficio**: Conversión directa - Reclutadores te contactan
+- **ROI**: ⭐⭐⭐⭐⭐
+
+#### **2. Timeline Interactivo de Experiencia** ⭐⭐⭐
+
+- **Problema**: Experiencia laboral en texto plano
+- **Solución**: Timeline visual con logos de empresas
+- **Prioridad**: 🟡 Alta
+- **Esfuerzo**: 3-4 horas
+- **Beneficio**: Presentación profesional impactante
+- **ROI**: ⭐⭐⭐⭐
+
+#### **3. Skills con Gráficos** ⭐⭐
+
+- **Problema**: Skills en lista simple
+- **Solución**: Gráfico radar o barras con años de experiencia
+- **Prioridad**: 🟡 Media
+- **Esfuerzo**: 2-3 horas
+- **Beneficio**: Visual atractivo, fácil de escanear
+- **ROI**: ⭐⭐⭐
+
+### **🟡 IMPORTANTE - Features Complementarias**
+
+#### **4. PWA Básico** ⭐⭐
+
+- Service Worker + Manifest
+- Instalable en móvil
+- Offline fallback básico
+- **Esfuerzo**: 2-3 horas
+- **Beneficio**: "Wow factor" técnico
+
+#### **5. Google Analytics Real** ⭐
+
+- Integrar GA4
+- Track eventos reales
+- Dashboard de métricas
+- **Esfuerzo**: 1 hora
+- **Beneficio**: Analytics profesional
+
+---
+
+## 📋 **Plan de Acción Recomendado**
+
+### **Hoy (2-3 horas):**
+
+1. ✅ Actualizar documentación (CHANGELOG + ROADMAP)
+2. 🔄 **Formulario de contacto funcional** (Formspree/EmailJS)
+3. 🔄 **Tests para nuevos componentes**
+
+### **Esta Semana (6-8 horas):**
+
+1. Timeline interactivo
+2. Skills mejorados
+3. PWA básico
+
+### **Próxima Semana (Opcional):**
+
+1. Blog system
+2. Backend con NestJS
+3. Admin panel
+
+---
+
+**Fecha de última actualización**: 2025-10-12  
+**Versión actual**: 1.2.0  
+**Próxima versión planeada**: 1.3.0  
+**Próxima revisión**: 2025-10-19
