@@ -38,7 +38,7 @@ Formspree es un servicio que permite manejar formularios de contacto sin necesid
 2. Reemplaza `'PENDING_SETUP'` con tu Form ID real:
 
 ```typescript
-formspreeFormId: 'xyzabc123', // Tu Form ID real aquí
+formspreeFormId: 'YOUR_FORMSPREE_ID_HERE', // Reemplaza con tu Form ID real
 ```
 
 #### **Para Producción (Vercel):**
@@ -47,7 +47,7 @@ formspreeFormId: 'xyzabc123', // Tu Form ID real aquí
 2. Ve a **Settings → Environment Variables**
 3. Agrega una nueva variable:
    - **Name**: `FORMSPREE_FORM_ID`
-   - **Value**: `xyzabc123` (tu Form ID)
+   - **Value**: `YOUR_FORMSPREE_ID_HERE` (tu Form ID real)
    - **Environments**: Marca **Production**, **Preview**, y **Development**
 4. Haz clic en **Save**
 5. Redeploy tu proyecto para aplicar los cambios
@@ -84,7 +84,7 @@ En el dashboard de Formspree puedes:
 - Configurar auto-respuestas
 - Ver IPs bloqueadas por spam
 
-**URL**: https://formspree.io/forms/[TU_FORM_ID]
+**URL**: https://formspree.io/forms/YOUR_FORM_ID
 
 ---
 
