@@ -151,7 +151,7 @@
   <section class="py-12">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <app-card padding="lg">
+        <lib-card padding="lg">
           <div *ngIf="project()?.readme" class="prose prose-lg dark:prose-invert max-w-none">
             <markdown [data]="project()?.readme"></markdown>
           </div>
@@ -161,7 +161,7 @@
           >
             <p>Este proyecto no tiene un archivo README.md</p>
           </div>
-        </app-card>
+        </lib-card>
 
         <!-- Back Button -->
         <div class="mt-8 text-center">
