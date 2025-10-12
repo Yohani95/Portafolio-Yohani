@@ -2,13 +2,13 @@ import { Component, signal, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { CardComponent } from '@portfolio-nx/ui';
+import { CardComponent, SkeletonCardComponent } from '@portfolio-nx/ui';
 import { ThemeService, GitHubService, Repository, SEOService } from '@portfolio-nx/data-access';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule, CardComponent],
+  imports: [CommonModule, RouterLink, FormsModule, CardComponent, SkeletonCardComponent],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })

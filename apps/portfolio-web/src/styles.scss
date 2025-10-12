@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   height: 100%;
@@ -28,4 +32,63 @@ body {
 .dark body {
   color: #f1f5f9;
   background-color: #0f172a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Staggered animations for children */
+.stagger-animation > * {
+  animation: slideUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.stagger-animation > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stagger-animation > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stagger-animation > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stagger-animation > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.stagger-animation > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.stagger-animation > *:nth-child(6) {
+  animation-delay: 0.6s;
 }
