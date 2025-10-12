@@ -1,11 +1,11 @@
-import { Component, Inject, PLATFORM_ID, OnDestroy, OnInit, signal, inject } from '@angular/core';
+import { Component, PLATFORM_ID, OnDestroy, OnInit, signal, inject } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { GitHubService, Repository, SEOService } from '@portfolio-nx/data-access';
 import { SkeletonCardComponent, ErrorStateComponent } from '@portfolio-nx/ui';
 
 @Component({
-  selector: 'app-home',
+  selector: 'lib-home',
   standalone: true,
   imports: [CommonModule, RouterLink, SkeletonCardComponent, ErrorStateComponent],
   templateUrl: './home.component.html',
@@ -14,6 +14,7 @@ import { SkeletonCardComponent, ErrorStateComponent } from '@portfolio-nx/ui';
 export class HomeComponent implements OnInit, OnDestroy {
   private githubService = inject(GitHubService);
   private seoService = inject(SEOService);
+  private platformId = inject(PLATFORM_ID);
 
   readonly name = 'Yohani Espinoza Duarte';
   readonly roles = ['Ingeniero en Informática', 'Full Stack Developer'];
@@ -27,8 +28,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   featuredProjects = signal<Repository[]>([]);
   loadingProjects = signal(true);
   errorProjects = signal(false);
-
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
   ngOnInit(): void {
     // SEO para la página de inicio

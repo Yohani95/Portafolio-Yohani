@@ -1,4 +1,4 @@
-import { Injectable, Inject, PLATFORM_ID, signal, effect } from '@angular/core';
+import { Injectable, inject, PLATFORM_ID, signal, effect } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 export type Theme = 'light' | 'dark';
@@ -9,8 +9,9 @@ export type Theme = 'light' | 'dark';
 export class ThemeService {
   // Signal para el tema actual
   private currentTheme = signal<Theme>('light');
+  private platformId = inject(PLATFORM_ID);
 
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {
+  constructor() {
     // Solo en el navegador, cargar el tema guardado
     if (isPlatformBrowser(this.platformId)) {
       const savedTheme = localStorage.getItem('theme') as Theme;

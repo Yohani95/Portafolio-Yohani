@@ -1,4 +1,4 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 interface CacheEntry<T> {
@@ -12,8 +12,7 @@ interface CacheEntry<T> {
 export class CacheService {
   private cache = new Map<string, CacheEntry<any>>();
   private readonly DEFAULT_TTL = 15 * 60 * 1000; // 15 minutos en milisegundos
-
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+  private platformId = inject(PLATFORM_ID);
 
   /**
    * Obtiene un valor del caché

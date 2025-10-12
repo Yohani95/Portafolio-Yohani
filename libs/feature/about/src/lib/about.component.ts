@@ -8,7 +8,7 @@ interface Skill {
 }
 
 @Component({
-  selector: 'app-about',
+  selector: 'lib-about',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './about.component.html',
