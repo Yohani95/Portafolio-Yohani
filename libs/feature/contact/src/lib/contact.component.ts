@@ -93,7 +93,17 @@ export class ContactComponent implements OnInit {
   }
 
   private submitToFormspree() {
+    // Validar que el formspreeFormId esté configurado
+    if (!environment.formspreeFormId || environment.formspreeFormId === 'PENDING_SETUP') {
+      console.error('❌ FORMSPREE_FORM_ID no configurado');
+      throw new Error(
+        'Formulario de contacto no configurado. Por favor, contacta directamente a yohani95301@gmail.com'
+      );
+    }
+
     const formspreeUrl = `https://formspree.io/f/${environment.formspreeFormId}`;
+
+    console.log('📧 Enviando formulario a:', formspreeUrl);
 
     const formData = {
       name: this.contactForm.value.name,
