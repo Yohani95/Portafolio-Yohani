@@ -27,7 +27,7 @@ jobs:
           cache: 'npm'
 
       - name: 📦 Install dependencies
-        run: npm ci
+        run: npm ci --prefer-offline --no-audit
 
       - name: 🔍 Lint
         run: npm run lint
@@ -39,7 +39,7 @@ jobs:
         run: npm run test:coverage
 
       - name: 📊 Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage/lcov.info
@@ -59,7 +59,7 @@ jobs:
           echo "✅ Build output validated"
 
       - name: 📤 Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-output
           path: dist/apps/portfolio-web
