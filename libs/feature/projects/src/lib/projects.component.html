@@ -96,7 +96,7 @@
         *ngFor="let i of [1, 2, 3, 4, 5, 6]"
         class="bg-white dark:bg-deep-900 rounded-lg shadow-md border border-deep-200 dark:border-deep-700 overflow-hidden"
       >
-        <app-skeleton-card></app-skeleton-card>
+        <lib-skeleton-card></lib-skeleton-card>
       </div>
     </div>
 
@@ -111,7 +111,7 @@
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-animation"
       *ngIf="filteredProjects.length > 0 && !loading()"
     >
-      <app-card *ngFor="let project of filteredProjects" [hoverable]="true">
+      <lib-card *ngFor="let project of filteredProjects" [hoverable]="true">
         <div class="flex flex-col h-full">
           <!-- Header -->
           <div class="mb-4">
@@ -195,7 +195,7 @@
             </a>
           </div>
         </div>
-      </app-card>
+      </lib-card>
     </div>
 
     <!-- Empty state -->

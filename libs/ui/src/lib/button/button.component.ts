@@ -6,7 +6,7 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 @Component({
-  selector: 'app-button',
+  selector: 'lib-button',
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './button.component.html',

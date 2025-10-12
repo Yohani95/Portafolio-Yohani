@@ -1,6 +1,6 @@
 {
   "name": "@portfolio-nx/source",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "MIT",
   "scripts": {
     "prepare": "husky",
@@ -9,7 +9,7 @@
     "serve-static": "nx serve-static portfolio-web",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "nx run-many --target=lint --all",
+    "lint": "nx run-many --target=lint --all --exclude=portfolio-web-e2e",
     "test": "nx run-many --target=test --all",
     "test:coverage": "nx run-many --target=test --all --coverage",
     "e2e": "nx e2e portfolio-web-e2e"

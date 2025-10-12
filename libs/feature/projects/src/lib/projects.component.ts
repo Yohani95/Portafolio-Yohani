@@ -6,7 +6,7 @@ import { CardComponent, SkeletonCardComponent } from '@portfolio-nx/ui';
 import { ThemeService, GitHubService, Repository, SEOService } from '@portfolio-nx/data-access';
 
 @Component({
-  selector: 'app-projects',
+  selector: 'lib-projects',
   standalone: true,
   imports: [CommonModule, RouterLink, FormsModule, CardComponent, SkeletonCardComponent],
   templateUrl: './projects.component.html',

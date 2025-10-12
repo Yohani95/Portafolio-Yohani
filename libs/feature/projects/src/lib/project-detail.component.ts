@@ -6,7 +6,7 @@ import { CardComponent } from '@portfolio-nx/ui';
 import { GitHubService, RepositoryDetail, SEOService } from '@portfolio-nx/data-access';
 
 @Component({
-  selector: 'app-project-detail',
+  selector: 'lib-project-detail',
   standalone: true,
   imports: [CommonModule, RouterLink, MarkdownModule, CardComponent],
   templateUrl: './project-detail.component.html',

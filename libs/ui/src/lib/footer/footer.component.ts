@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'lib-footer',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './footer.component.html',
@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
-  version = '1.1.0';
+  version = '1.1.1';
 
   socialLinks = [
     {

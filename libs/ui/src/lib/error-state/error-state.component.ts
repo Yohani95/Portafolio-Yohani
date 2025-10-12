@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-error-state',
+  selector: 'lib-error-state',
   standalone: true,
   imports: [CommonModule],
   template: `

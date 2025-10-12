@@ -42,14 +42,14 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('app-header')).toBeTruthy();
+    expect(compiled.querySelector('lib-header')).toBeTruthy();
   });
 
   it('should render footer', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('app-footer')).toBeTruthy();
+    expect(compiled.querySelector('lib-footer')).toBeTruthy();
   });
 
   it('should render router outlet', () => {

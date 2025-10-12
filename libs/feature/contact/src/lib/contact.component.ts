@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { SEOService } from '@portfolio-nx/data-access';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'lib-contact',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',

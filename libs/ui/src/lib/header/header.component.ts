@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ThemeService } from '@portfolio-nx/data-access';
 
 @Component({
-  selector: 'app-header',
+  selector: 'lib-header',
   standalone: true,
   imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',

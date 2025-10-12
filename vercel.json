@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "portafolio-yohani-espinoza",
-  "buildCommand": "node build-vercel.js",
+  "buildCommand": "npm run test && npm run lint && node build-vercel.js",
   "outputDirectory": "dist/apps/portfolio-web/browser",
   "rewrites": [
     {
