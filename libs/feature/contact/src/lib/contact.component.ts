@@ -1,18 +1,22 @@
-import { Component, OnInit, signal, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, signal, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { SEOService } from '@portfolio-nx/data-access';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SEOService, AnalyticsService, environment } from '@portfolio-nx/data-access';
 
 @Component({
   selector: 'lib-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
   private fb = inject(FormBuilder);
+  private http = inject(HttpClient);
   private seoService = inject(SEOService);
+  private analyticsService = inject(AnalyticsService);
+  private platformId = inject(PLATFORM_ID);
 
   contactForm: FormGroup;
   submitted = signal(false);
@@ -62,14 +66,44 @@ export class ContactComponent implements OnInit {
       return;
     }
 
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     this.loading.set(true);
 
-    // Simulación de envío (aquí iría la llamada al API)
-    setTimeout(() => {
-      this.loading.set(false);
-      this.successMessage.set('¡Mensaje enviado exitosamente! Te responderé pronto.');
-      this.contactForm.reset();
-      this.submitted.set(false);
-    }, 1500);
+    // Envío real a Formspree
+    this.submitToFormspree().subscribe({
+      next: () => {
+        this.loading.set(false);
+        this.successMessage.set('¡Mensaje enviado exitosamente! Te responderé pronto. 📧');
+        this.analyticsService.trackContactSubmission('success');
+        this.contactForm.reset();
+        this.submitted.set(false);
+      },
+      error: (error) => {
+        this.loading.set(false);
+        console.error('Error al enviar formulario:', error);
+        this.errorMessage.set(
+          'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctame directamente a yohani95301@gmail.com'
+        );
+        this.analyticsService.trackContactSubmission('error');
+      },
+    });
+  }
+
+  private submitToFormspree() {
+    const formspreeUrl = `https://formspree.io/f/${environment.formspreeFormId}`;
+
+    const formData = {
+      name: this.contactForm.value.name,
+      email: this.contactForm.value.email,
+      subject: this.contactForm.value.subject,
+      message: this.contactForm.value.message,
+      _replyto: this.contactForm.value.email,
+      _subject: `Nuevo mensaje de ${this.contactForm.value.name}: ${this.contactForm.value.subject}`,
+    };
+
+    return this.http.post(formspreeUrl, formData);
   }
 }

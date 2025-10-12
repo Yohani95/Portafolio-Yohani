@@ -5,6 +5,28 @@ Todos los cambios notables en este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+## [1.3.0] - 2025-10-12
+
+### ✨ Agregado
+
+**Formulario de Contacto Funcional**
+
+- ✅ **Integración con Formspree**: Envío real de emails sin backend
+- ✅ **Validaciones completas**: Nombre, email, asunto, mensaje
+- ✅ **Estados de UI**: Loading, success, error con mensajes claros
+- ✅ **Analytics integrado**: Tracking de envíos exitosos y fallidos
+- ✅ **Variables de entorno**: Configuración para desarrollo y producción
+- ✅ **Documentación**: Guía completa en `FORMSPREE_SETUP.md`
+
+**Mejoras Técnicas**
+
+- ✅ HttpClient configurado en ContactComponent
+- ✅ Build script actualizado para inyectar `FORMSPREE_FORM_ID`
+- ✅ Export de `environment` desde data-access
+- ✅ Protección SSR con `isPlatformBrowser`
+
+---
+
 ## [1.2.0] - 2025-10-12
 
 ### ✨ Agregado

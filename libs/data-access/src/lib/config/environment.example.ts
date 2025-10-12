@@ -34,4 +34,11 @@ export const environment = {
    * Google Analytics ID (opcional)
    */
   gaTrackingId: '',
+
+  /**
+   * Formspree Form ID para formulario de contacto
+   * Obtener en: https://formspree.io
+   * Formato: xyzabc123
+   */
+  formspreeFormId: 'tu_formspree_id_aqui',
 };

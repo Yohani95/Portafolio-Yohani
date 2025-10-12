@@ -7,4 +7,4 @@ export * from './lib/services/analytics.service';
 export * from './lib/models/repository.model';
 export * from './lib/graphql/github.graphql';
 export * from './lib/providers/apollo.provider';
-export * from './lib/config/environment';
+export { environment } from './lib/config/environment';

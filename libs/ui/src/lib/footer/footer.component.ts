@@ -11,7 +11,7 @@ import { AnalyticsService } from '@portfolio-nx/data-access';
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
-  version = '1.2.0';
+  version = '1.3.0';
   private analyticsService = inject(AnalyticsService);
 
   socialLinks = [
