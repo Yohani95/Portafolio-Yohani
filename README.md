@@ -2,6 +2,7 @@
 
 <div align="center">
 
+![Version](https://img.shields.io/badge/version-1.3.0-blue?style=for-the-badge)
 ![Angular](https://img.shields.io/badge/Angular-20-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![Nx](https://img.shields.io/badge/Nx-Monorepo-143055?style=for-the-badge&logo=nx&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
@@ -77,10 +78,13 @@ Crear un portafolio profesional que destaque en búsquedas de Google, sea fácil
 
 ### 🛠️ Funcionalidades
 
-- ✅ **Integración GitHub GraphQL** - Proyectos en tiempo real desde GitHub
+- ✅ **Formulario de Contacto Funcional** - Integración con Formspree para envío real de emails
+- ✅ **CV Descargable en PDF** - Botón prominente para descargar curriculum vitae
+- ✅ **Sistema de Analytics** - Tracking de eventos (descargas CV, envíos formulario, navegación)
+- ✅ **Integración GitHub GraphQL** - Proyectos en tiempo real desde GitHub API
 - ✅ **Markdown Rendering** - README de proyectos renderizados con sintaxis highlight
 - ✅ **Filtros y Búsqueda** - Buscar proyectos por nombre, tecnología o topic
-- ✅ **Formulario de Contacto** - Validación reactiva con Angular Forms
+- ✅ **Validación de Formularios** - Validación reactiva con Angular Forms
 - ✅ **Perfil Dinámico** - Información personal y profesional actualizable
 
 ---
